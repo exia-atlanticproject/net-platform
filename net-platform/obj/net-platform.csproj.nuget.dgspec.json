@@ -1,0 +1,70 @@
+{
+  "format": 1,
+  "restore": {
+    "/home/ronflex/Lab/cesi/net/net-platform/net-platform/net-platform.csproj": {}
+  },
+  "projects": {
+    "/home/ronflex/Lab/cesi/net/net-platform/net-platform/net-platform.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/ronflex/Lab/cesi/net/net-platform/net-platform/net-platform.csproj",
+        "projectName": "net-platform",
+        "projectPath": "/home/ronflex/Lab/cesi/net/net-platform/net-platform/net-platform.csproj",
+        "packagesPath": "/home/ronflex/.nuget/packages/",
+        "outputPath": "/home/ronflex/Lab/cesi/net/net-platform/net-platform/obj/",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "/usr/share/dotnet/sdk/NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "/home/ronflex/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp2.2"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp2.2": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp2.2": {
+          "dependencies": {
+            "Microsoft.AspNetCore": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.AspNetCore.HttpsPolicy": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.AspNetCore.Mvc": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.NETCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.2.0, )",
+              "autoReferenced": true
+            }
+          },
+          "imports": [
+            "net461"
+          ],
+          "assetTargetFallback": true,
+          "warn": true
+        }
+      }
+    }
+  }
+}

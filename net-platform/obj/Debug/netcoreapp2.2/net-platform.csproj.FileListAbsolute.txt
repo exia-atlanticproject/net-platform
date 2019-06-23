@@ -1,0 +1,15 @@
+/home/ronflex/Lab/cesi/net/net-platform/net-platform/bin/Debug/netcoreapp2.2/net-platform.dll.config
+/home/ronflex/Lab/cesi/net/net-platform/net-platform/bin/Debug/netcoreapp2.2/net-platform.deps.json
+/home/ronflex/Lab/cesi/net/net-platform/net-platform/bin/Debug/netcoreapp2.2/net-platform.runtimeconfig.json
+/home/ronflex/Lab/cesi/net/net-platform/net-platform/bin/Debug/netcoreapp2.2/net-platform.runtimeconfig.dev.json
+/home/ronflex/Lab/cesi/net/net-platform/net-platform/bin/Debug/netcoreapp2.2/net-platform.dll
+/home/ronflex/Lab/cesi/net/net-platform/net-platform/bin/Debug/netcoreapp2.2/net-platform.pdb
+/home/ronflex/Lab/cesi/net/net-platform/net-platform/obj/Debug/netcoreapp2.2/net-platform.csprojAssemblyReference.cache
+/home/ronflex/Lab/cesi/net/net-platform/net-platform/obj/Debug/netcoreapp2.2/net-platform.csproj.CoreCompileInputs.cache
+/home/ronflex/Lab/cesi/net/net-platform/net-platform/obj/Debug/netcoreapp2.2/net-platform.RazorAssemblyInfo.cache
+/home/ronflex/Lab/cesi/net/net-platform/net-platform/obj/Debug/netcoreapp2.2/net-platform.RazorAssemblyInfo.cs
+/home/ronflex/Lab/cesi/net/net-platform/net-platform/obj/Debug/netcoreapp2.2/net-platform.AssemblyInfoInputs.cache
+/home/ronflex/Lab/cesi/net/net-platform/net-platform/obj/Debug/netcoreapp2.2/net-platform.AssemblyInfo.cs
+/home/ronflex/Lab/cesi/net/net-platform/net-platform/obj/Debug/netcoreapp2.2/net-platform.RazorTargetAssemblyInfo.cache
+/home/ronflex/Lab/cesi/net/net-platform/net-platform/obj/Debug/netcoreapp2.2/net-platform.dll
+/home/ronflex/Lab/cesi/net/net-platform/net-platform/obj/Debug/netcoreapp2.2/net-platform.pdb

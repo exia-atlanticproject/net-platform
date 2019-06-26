@@ -26,7 +26,7 @@ namespace Tests
             string jsonBroker = JsonConvert.SerializeObject(broker);
             byte[] payloadBroker = Encoding.UTF8.GetBytes(jsonBroker);
             
-            string topic = "/device/TheDeviceId";
+            string topic = "device/TheDeviceId/telemetry";
             
             byte[] result = _mqttServer.processMqttMessage(topic, payload);
 
@@ -45,11 +45,11 @@ namespace Tests
 
     public class BrokerData
     {
-        public string clientId = "TheDeviceId";
         public string name = "humiditySensor_wealthy-snails";
         public string macAddress = "44:81:C0:0D:6C:E3";
         public string metricDate = "2019-05-25T16:40:13Z";
         public string deviceType = "humiditySensor";
         public string metricValue = "0";
+        public string clientId = "TheDeviceId";
     }
 }

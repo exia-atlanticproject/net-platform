@@ -3881,7 +3881,7 @@
   },
   "libraries": {
     "M2Mqtt/4.3.0": {
-      "sha512": "DZytZgKhUxDs2GzytBdj4VlDpqV/XlS5fArzNxny12yE/3mbP8QSfxz7uJo8pKgdOEMEmt7Ot2Z6SoGM3nfbrg==",
+      "sha512": "2A1uM20uxuovQKPA0dkZUqD9gUpIMaX7KxdLiVM7IEXdPRL709hGuudHnvlDxm2/6b2LcOjshrYGVG9vdpipag==",
       "type": "package",
       "path": "m2mqtt/4.3.0",
       "files": [
@@ -6081,7 +6081,7 @@
       ]
     },
     "Newtonsoft.Json/12.0.2": {
-      "sha512": "mtweBXPWhp1CMQATtBT7ZfMZrbZBTKfjGwz6Y75NwGjx/GztDaUnfw8GK9KZ2T4fDIqKJyDjc9Rxlw5+G2FcVA==",
+      "sha512": "rTK0s2EKlfHsQsH6Yx2smvcTCeyoDNgCW7FEYyV01drPlh2T243PR2DiDXqtC5N4GDm4Ma/lkxfW5a/4793vbA==",
       "type": "package",
       "path": "newtonsoft.json/12.0.2",
       "files": [
@@ -9392,7 +9392,7 @@
       ]
     },
     "System.Runtime.Loader/4.0.0": {
-      "sha512": "AGWrywLI2B15/dnLuFnlHWFjXmq1Tl0kjWaKTHbaJ8T9kIxiQ8YGTtiMQc8rUr49l2JjfZa7QY0KKqlyzA7NNg==",
+      "sha512": "4UN78GOVU/mbDFcXkEWtetJT/sJ0yic2gGk1HSlSpWI0TDf421xnrZTDZnwNBapk1GQeYN7U1lTj/aQB1by6ow==",
       "type": "package",
       "path": "system.runtime.loader/4.0.0",
       "files": [
@@ -11165,23 +11165,23 @@
     ]
   },
   "packageFolders": {
-    "/home/ronflex/.nuget/packages/": {},
+    "/root/.nuget/packages/": {},
     "/usr/share/dotnet/sdk/NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/ronflex/Lab/cesi/net/net-platform/net-platform.Tests/net-platform.Tests.csproj",
+      "projectUniqueName": "/home/net-platform.Tests/net-platform.Tests.csproj",
       "projectName": "net-platform.Tests",
-      "projectPath": "/home/ronflex/Lab/cesi/net/net-platform/net-platform.Tests/net-platform.Tests.csproj",
-      "packagesPath": "/home/ronflex/.nuget/packages/",
-      "outputPath": "/home/ronflex/Lab/cesi/net/net-platform/net-platform.Tests/obj/",
+      "projectPath": "/home/net-platform.Tests/net-platform.Tests.csproj",
+      "packagesPath": "/root/.nuget/packages/",
+      "outputPath": "/home/net-platform.Tests/obj/",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "/usr/share/dotnet/sdk/NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "/home/ronflex/.nuget/NuGet/NuGet.Config"
+        "/root/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp2.2"
@@ -11192,8 +11192,8 @@
       "frameworks": {
         "netcoreapp2.2": {
           "projectReferences": {
-            "/home/ronflex/Lab/cesi/net/net-platform/net-platform/net-platform.csproj": {
-              "projectPath": "/home/ronflex/Lab/cesi/net/net-platform/net-platform/net-platform.csproj"
+            "/home/net-platform/net-platform.csproj": {
+              "projectPath": "/home/net-platform/net-platform.csproj"
             }
           }
         }

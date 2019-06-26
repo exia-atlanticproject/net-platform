@@ -15,8 +15,8 @@ namespace Tests
         [Test]
         public void Test1()
         {
-            var result = _calculationEngine.testFunction(2, 1);
-            Assert.AreEqual((2+1), result, 0);
+            var result = _calculationEngine.testFunction(1, 2);
+            Assert.AreEqual(3, result, 0);
         }
     }
 }

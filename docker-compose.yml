@@ -1,28 +1,14 @@
 version: "2"
 services:
-  calculationdb:
-    image: mysql:5.7
+  net-platform:
+    build:
+     context: .
+     dockerfile: Dockerfile
+    container_name: net-platform
     expose:
-      - 3306
+     - 80
+     - 443
     ports:
-      - "8002:3306"
+      - "8888:80"
     volumes:
-     - ./config/mysql/:/var/lib/mysql
-    environment:
-     - MYSQL_DATABASE=calculationdb
-     - MYSQL_USER=calculationdb
-     - MYSQL_PASSWORD=p@ssw0rd
-     - MYSQL_ROOT_PASSWORD=p@ssw0rd
-  phpmyadmin:
-    image: phpmyadmin/phpmyadmin:latest
-    ports:
-      - "8001:80"
-    links:
-      - calculationdb
-    depends_on:
-      - calculationdb
-    environment:
-      - MYSQL_USER=calculationdb
-      - MYSQL_PASSWORD=p@ssw0rd
-      - MYSQL_ROOT_PASSWORD=p@ssw0rd
-      - PMA_HOST=calculationdb
+     - ./:/home/

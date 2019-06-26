@@ -9405,23 +9405,23 @@
     ]
   },
   "packageFolders": {
-    "/root/.nuget/packages/": {},
+    "/home/ronflex/.nuget/packages/": {},
     "/usr/share/dotnet/sdk/NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/net-platform/net-platform.csproj",
+      "projectUniqueName": "/home/ronflex/Lab/cesi/net/net-platform/net-platform/net-platform.csproj",
       "projectName": "net-platform",
-      "projectPath": "/home/net-platform/net-platform.csproj",
-      "packagesPath": "/root/.nuget/packages/",
-      "outputPath": "/home/net-platform/obj/",
+      "projectPath": "/home/ronflex/Lab/cesi/net/net-platform/net-platform/net-platform.csproj",
+      "packagesPath": "/home/ronflex/.nuget/packages/",
+      "outputPath": "/home/ronflex/Lab/cesi/net/net-platform/net-platform/obj/",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "/usr/share/dotnet/sdk/NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "/root/.nuget/NuGet/NuGet.Config"
+        "/home/ronflex/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp2.2"

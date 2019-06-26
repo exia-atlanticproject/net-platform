@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v2.2",
-    "signature": "c3285e7391fb0a0b3bc087c2880cf909f5ee80be"
+    "signature": "c09fdaf06c12fd49eb2fa23d77e2eb8cf6fc7311"
   },
   "compilationOptions": {
     "defines": [
@@ -24,6 +24,7 @@
     ".NETCoreApp,Version=v2.2": {
       "net-platform/1.0.0": {
         "dependencies": {
+          "M2Mqtt": "4.3.0",
           "MQTTnet": "3.0.2",
           "Microsoft.AspNetCore": "2.2.0",
           "Microsoft.AspNetCore.HttpsPolicy": "2.2.0",
@@ -35,6 +36,17 @@
         },
         "compile": {
           "net-platform.dll": {}
+        }
+      },
+      "M2Mqtt/4.3.0": {
+        "runtime": {
+          "lib/net45/M2Mqtt.Net.dll": {
+            "assemblyVersion": "4.3.0.0",
+            "fileVersion": "4.3.0.0"
+          }
+        },
+        "compile": {
+          "lib/net45/M2Mqtt.Net.dll": {}
         }
       },
       "Microsoft.AspNetCore/2.2.0": {
@@ -2909,6 +2921,13 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "M2Mqtt/4.3.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-DZytZgKhUxDs2GzytBdj4VlDpqV/XlS5fArzNxny12yE/3mbP8QSfxz7uJo8pKgdOEMEmt7Ot2Z6SoGM3nfbrg==",
+      "path": "m2mqtt/4.3.0",
+      "hashPath": "m2mqtt.4.3.0.nupkg.sha512"
     },
     "Microsoft.AspNetCore/2.2.0": {
       "type": "package",

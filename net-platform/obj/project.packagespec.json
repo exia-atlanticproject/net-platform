@@ -29,6 +29,10 @@
   "frameworks": {
     "netcoreapp2.2": {
       "dependencies": {
+        "M2Mqtt": {
+          "target": "Package",
+          "version": "[4.3.0, )"
+        },
         "MQTTnet": {
           "target": "Package",
           "version": "[3.0.2, )"

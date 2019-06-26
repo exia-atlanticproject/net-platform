@@ -6,8 +6,6 @@ using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.Logging;
 using net_platform.Mqtt;
 
 namespace net_platform
@@ -16,14 +14,20 @@ namespace net_platform
     {
         public static void Main(string[] args)
         {
-            Thread t = new Thread(CreateWebHostBuilder(args).Build().Run);
-            t.Start();
-            
+            /*Thread t = new Thread(CreateWebHostBuilder(args).Build().Run);
+            t.Start();*/
+
             Thread t2 = new Thread(LaunchMqttServer);
             t2.Start();
             
-            /*MqttClient client = new MqttClient();
-            client.setMqttClient();*/
+            BrokerClient client = new BrokerClient();
+            client.setBrokerClient();
+
+            Console.WriteLine("Press any key to exit");
+            Console.ReadLine();
+            /*
+            Thread.Sleep(2000);
+            client.sendBrokerMessage("device/telemetry", "Nique tout");*/
         }
 
         public static void LaunchMqttServer()

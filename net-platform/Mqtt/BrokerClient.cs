@@ -57,7 +57,7 @@ namespace net_platform.Mqtt
             var options = new MqttClientOptionsBuilder()
                 .WithClientId(Guid.NewGuid().ToString())
                 //.WithTcpServer("localhost", 1883)
-                .WithTcpServer("10.154.128.62", 1883)
+                .WithTcpServer("192.168.0.32", 1883)
                 .WithCredentials("service", "safepw")
                 .WithCleanSession();
             

@@ -26,6 +26,7 @@ namespace net_platform.Calculation
         private void parseRequest(string request)
         {
             dynamic jsonRequest = JObject.Parse(request);
+            jsonRequest = jsonRequest.payload;
             List<List<double>> computedDataSet = dataSetByGranularity(jsonRequest);
             List<double> finalResults = executeRequestedCalcul(computedDataSet, jsonRequest.calculType.ToString());
             createDbCalcul(finalResults, jsonRequest);
@@ -86,8 +87,8 @@ namespace net_platform.Calculation
             double output = 0;
             foreach (double data in dataList)
             {
-                output += data;
                 iData++;
+                output += data;
             }
 
             return output / iData;
@@ -98,7 +99,7 @@ namespace net_platform.Calculation
             int dataLength = dataList.Count;
             dataLength = dataLength / 2;
             
-            return Double.Parse(dataList[dataLength].ToString());
+            return dataList[dataLength];
         }
 
         public double computeMax(List<double> dataList)

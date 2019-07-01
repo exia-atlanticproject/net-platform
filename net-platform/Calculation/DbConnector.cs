@@ -8,6 +8,7 @@ namespace net_platform.Calculation
     {
         private static bool _isCreated = false;
         private static MySqlConnection _mysqlClient;
+        public static int _lastId;
         
         private static void InitializeClient()
         {
@@ -29,7 +30,7 @@ namespace net_platform.Calculation
             }
         }
 
-        private static MySqlConnection getDbClient()
+        public static MySqlConnection getDbClient()
         {
             if (!_isCreated)
             {
@@ -116,8 +117,9 @@ namespace net_platform.Calculation
             {
                 Console.WriteLine(e);
             }
+            _lastId = (int) cmd.LastInsertedId;
 
-            return (int) cmd.LastInsertedId;
+            return _lastId;
         }
 
         public static void addResult(int idJob, double result)

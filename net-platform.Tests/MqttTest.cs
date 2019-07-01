@@ -9,7 +9,7 @@ namespace Tests
     [TestFixture]
     public class MqttTest
     {
-        private readonly MqttServer _mqttServer;
+        /*private readonly MqttServer _mqttServer;
 
         public MqttTest()
         {
@@ -31,7 +31,7 @@ namespace Tests
             byte[] result = _mqttServer.processMqttMessage(topic, payload);
 
             StringAssert.Contains(Encoding.UTF8.GetString(payloadBroker), Encoding.UTF8.GetString(result));
-        }
+        }*/
     }
 
     public class DeviceData

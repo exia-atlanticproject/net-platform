@@ -1,5 +1,10 @@
+using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using net_platform.Mqtt;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 
 namespace net_platform.Controllers
 {
@@ -8,21 +13,45 @@ namespace net_platform.Controllers
     public class DevicesController : Controller
     {
         [HttpPost("{deviceId}/telemetry")]
-        public string Post([FromBody] string data)
+        public string Post([FromBody] dynamic data, string deviceId)
         {
-            return "ok";
+            data.name = "";
+            data.macAddress = "";
+            MqttServer.processMqttMessage(data, deviceId);
+            return "success";
         }
         
         [HttpPost]
-        public string PostDevice([FromBody] string data)
+        public string PostDevice([FromBody] dynamic data)
         {
-            return "ok";
-        }
-        
-        [HttpGet]
-        public ActionResult<IEnumerable<string>> Get()
-        {
-            return new string[] {"value1", "value2"};
+            string id = Guid.NewGuid().ToString();
+            string name;
+            if (data.name.ToString().Length == 0)
+            {
+                name = data.deviceType.ToString() + " - " + id;
+            }
+            else
+            {
+                name = data.name.ToString();
+            }
+
+            var finalData = new
+            {
+                action="registerDevice",
+                source="",
+                callback="",
+                payload= new
+                {
+                    deviceId=id,
+                    deviceName=name,
+                    deviceType=data.deviceType.ToString()
+                }
+            };
+            string jsonDataSet = JsonConvert.SerializeObject(finalData);
+            string returnDataSet = JsonConvert.SerializeObject(finalData.payload);
+            BrokerClient.sendMqttMessage(jsonDataSet, "Data-Controller");
+            
+            return returnDataSet;
         }
     }
 }

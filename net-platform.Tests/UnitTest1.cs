@@ -6,7 +6,7 @@ namespace Tests
     [TestFixture]
     public class Tests
     {
-        private readonly CalculationEngine _calculationEngine;
+        /*private readonly CalculationEngine _calculationEngine;
         
         public Tests()
         {
@@ -17,6 +17,6 @@ namespace Tests
         {
             var result = _calculationEngine.testFunction(1, 2);
             Assert.AreEqual(3, result, 0);
-        }
+        }*/
     }
 }

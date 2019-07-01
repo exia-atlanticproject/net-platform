@@ -43,6 +43,8 @@ namespace net_platform
 
             app.UseHttpsRedirection();
             app.UseMvc();
+            
+            
         }
     }
 }

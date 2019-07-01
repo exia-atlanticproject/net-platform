@@ -5,32 +5,60 @@ using System.Text;
 using MQTTnet;
 using MQTTnet.Client;
 using MQTTnet.Client.Options;
-using uPLibrary.Networking.M2Mqtt;
-using uPLibrary.Networking.M2Mqtt.Messages;
 
 namespace net_platform.Mqtt
 {
     public class BrokerClient
     {
         private static IMqttClient _mqttClient;
-        public async void setBrokerClient()
+        private static IBrokerAction[] _componentListener;
+        private static string[] _topicListened;
+        private static int _comptListener = 0;
+        private static int _totalListener;
+
+        public BrokerClient(int totalListener)
         {
+            _componentListener = new IBrokerAction[totalListener];
+            _topicListened = new string[totalListener];
+            _totalListener = totalListener;
             var factory = new MqttFactory();
-            var _mqttClient = factory.CreateMqttClient();
+            _mqttClient = factory.CreateMqttClient();
+        }
+        public static async void setBrokerClient()
+        {
+            Console.WriteLine("Setting up client");
             
             _mqttClient.UseConnectedHandler(async e =>
             {
-                Console.WriteLine("### CONNECTED WITH SERVER ###");
-
-                // Subscribe to a topic
-                await _mqttClient.SubscribeAsync(new TopicFilterBuilder().WithTopic("my/topic").Build());
-
-                Console.WriteLine("### SUBSCRIBED ###");
+                int comptTest = 0;
+                foreach (string topic in _topicListened)
+                {
+                    // Subscribe to a topic
+                    Console.WriteLine("New subscriber");
+                    Console.WriteLine(topic);
+                    await _mqttClient.SubscribeAsync(new TopicFilterBuilder().WithTopic(topic).Build());
+                    comptTest++;
+                }
+            });
+            
+            _mqttClient.UseApplicationMessageReceivedHandler(e =>
+            {
+                int comptTest = 0;
+                foreach (string topic in _topicListened)
+                {
+                    if (topic == e.ApplicationMessage.Topic)
+                    {
+                        _componentListener[comptTest].notify(Encoding.UTF8.GetString(e.ApplicationMessage.Payload));
+                    }
+                    comptTest++;
+                }
             });
 
             var options = new MqttClientOptionsBuilder()
-                .WithClientId("Client1")
-                .WithTcpServer("10.154.128.153", 1883)
+                .WithClientId(Guid.NewGuid().ToString())
+                //.WithTcpServer("localhost", 1883)
+                .WithTcpServer("10.154.128.62", 1883)
+                .WithCredentials("service", "safepw")
                 .WithCleanSession();
             
             try
@@ -43,32 +71,25 @@ namespace net_platform.Mqtt
                 Console.WriteLine(e.Message);
             }
         }
-        
-        
-        /*public static MqttClient _mqttClient;
-        public static string[] _topics;
-        public static IBrokerAction[] _topicsObjects;
 
-        public void setBrokerClient()
+        public static void addNewListener(IBrokerAction component, string topic)
         {
-            MqttClient _mqttClient = new MqttClient("10.154.128.153");
-            //byte code = client.Connect(Guid.NewGuid().ToString());
-            _mqttClient.Connect(Guid.NewGuid().ToString());
-            _mqttClient.MqttMsgSubscribed += client_MqttMsgSubscribed;
-            _mqttClient.MqttMsgPublishReceived += client_MqttMsgPublishReceived;
-            ushort msgId = _mqttClient.Subscribe(new string[] { "device/telemetry"}, new byte[] { MqttMsgBase.QOS_LEVEL_AT_MOST_ONCE });
+            _componentListener[_comptListener] = component;
+            _topicListened[_comptListener] = topic;
+
+            _comptListener ++;
+            if(_comptListener == _totalListener) setBrokerClient();
         }
-        static void client_MqttMsgPublishReceived(object sender, MqttMsgPublishEventArgs e)
+
+        public static async void sendMqttMessage(string message, string topic)
         {
-            Console.WriteLine("Received = " + Encoding.UTF8.GetString(e.Message) + " on topic " + e.Topic);
+            var mqttMessage = new MqttApplicationMessageBuilder()
+                .WithTopic(topic)
+                .WithPayload(message)
+                .WithAtMostOnceQoS()
+                .Build();
+
+            await _mqttClient.PublishAsync(mqttMessage);
         }
-        static void client_MqttMsgSubscribed(object sender, MqttMsgSubscribedEventArgs e)
-        {
-            Console.WriteLine("Subscribed for id = " + e.MessageId);
-        }
-        public void sendBrokerMessage(string topic, string message)
-        {
-            _mqttClient.Publish(topic, Encoding.UTF8.GetBytes(message), MqttMsgBase.QOS_LEVEL_EXACTLY_ONCE, false);
-        }*/
     }
 }

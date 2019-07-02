@@ -6,7 +6,7 @@ pipeline {
     stage('Build') {
       steps {
         echo 'Building Docker'
-        sh 'docker --no-cache build -t atlantis-net-platform .'
+        sh 'docker build --no-cache -t atlantis-net-platform .'
       }
     }
     stage('Test') {

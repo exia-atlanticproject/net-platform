@@ -3,7 +3,7 @@ pipeline {
         dockerfile {
             filename 'Dockerfile'
             dir '.'
-            container-name 'net-platform'
+            name 'net-platform'
         }
       }
   stages {

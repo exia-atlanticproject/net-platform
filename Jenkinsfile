@@ -10,7 +10,7 @@ pipeline {
     stage('Test') {
       steps {
         echo 'Test'
-        sh 'docker run --name net-platform atlantis-net-platform:latest'
+        sh 'docker run --name net-platform -p 443:443 atlantis-net-platform:latest test'
       }
     }
     stage('Deploy') {

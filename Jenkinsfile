@@ -6,7 +6,6 @@ pipeline {
         dockerfile {
             filename 'Dockerfile'
             dir '.'
-            label 'net-platform'
         }
       }
       steps {

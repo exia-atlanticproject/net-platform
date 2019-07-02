@@ -1,20 +1,16 @@
 pipeline {
-  agent {
-        dockerfile {
-            filename 'Dockerfile'
-            dir '.'
-            name 'net-platform'
-        }
-      }
+  agent any
   stages {
     stage('Build') {
       steps {
-        echo 'build'
+        echo 'Building Docker'
+        sh 'docker build -t atlantis-net-platform .'
       }
     }
     stage('Test') {
       steps {
-        echo 'mvn test'
+        echo 'Test'
+        sh 'docker run --name net-platform atlantis-net-platform:latest'
       }
     }
     stage('Deploy') {

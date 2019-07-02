@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('Build Docker') {
       agent {
-        docker {
+        dockerfile {
             filename 'Dockerfile'
             dir '.'
             label 'net-platform'

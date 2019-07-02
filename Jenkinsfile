@@ -13,7 +13,7 @@ pipeline {
       steps {
         echo 'Test'
         sh 'docker login -u jdieuze -p $DOCKER_PASSWORD'
-        sh 'docker run --name net-platform -p 443:443 atlantis-net-platform:latest test'
+        sh 'docker run --name net-platform -p 443:443 -p 1883:1883 atlantis-net-platform:latest test'
         sh 'docker tag atlantis-net-platform:latest jdieuze/net-platform:latest'
         sh 'docker push jdieuze/net-platform:latest'
       }

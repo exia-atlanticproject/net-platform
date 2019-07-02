@@ -57,7 +57,7 @@ namespace net_platform.Mqtt
             var options = new MqttClientOptionsBuilder()
                 .WithClientId(Guid.NewGuid().ToString())
                 //.WithTcpServer("localhost", 1883)
-                .WithTcpServer("192.168.0.32", 1883)
+                .WithTcpServer("137.74.194.194", 1883)
                 .WithCredentials("service", "safepw")
                 .WithCleanSession();
             
@@ -83,6 +83,7 @@ namespace net_platform.Mqtt
 
         public static async void sendMqttMessage(string message, string topic)
         {
+            Console.WriteLine(message);
             var mqttMessage = new MqttApplicationMessageBuilder()
                 .WithTopic(topic)
                 .WithPayload(message)

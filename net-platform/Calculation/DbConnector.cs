@@ -12,10 +12,10 @@ namespace net_platform.Calculation
         
         private static void InitializeClient()
         {
-            string host = "localhost";
-            string db = "calculationdb";
-            string user = "calculationdb";
-            string password = "p@ssw0rd";
+            string host = "remotemysql.com";
+            string db = "0qKByDJNP8";
+            string user = "0qKByDJNP8";
+            string password = "xdm0PfOiqs";
 
             _mysqlClient = new MySqlConnection("SERVER=" + host + ";" + "DATABASE=" + db + ";" + "UID=" + user + ";" + "PASSWORD=" + password + ";");
             

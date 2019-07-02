@@ -16,7 +16,7 @@ namespace net_platform.Mqtt
 
         public MqttServer()
         {
-            string topic = "device/telemetry";
+            string topic = "command";
             BrokerClient.addNewListener(this, topic);
         }
 
@@ -106,6 +106,7 @@ namespace net_platform.Mqtt
         {
             string strCommand = "{\"command\": " + command + "}";
             string topic = "device/command/" + deviceId;
+            Console.WriteLine("Publishing on " + topic + " with payload " + strCommand);
             sendMqttMessage(strCommand, topic);
         }
     }

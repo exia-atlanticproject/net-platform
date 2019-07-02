@@ -1,15 +1,15 @@
 pipeline {
-  agent none
-  stages {
-    stage('Build Docker') {
-      agent {
+  agent {
         dockerfile {
             filename 'Dockerfile'
             dir '.'
+            container-name 'net-platform'
         }
       }
+  stages {
+    stage('Build') {
       steps {
-        echo 'build docker test'
+        echo 'build'
       }
     }
     stage('Test') {
